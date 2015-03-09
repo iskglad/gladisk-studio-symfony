@@ -1,3 +1,31 @@
 app:
     resource: @AppBundle/Controller/
     type:     annotation
+
+homepage:
+    defaults:  { _controller: AppBundle:Default:index}
+    path: /
+
+#POST
+#============================
+posts:
+    defaults:  { _controller: AppBundle:Default:index}
+    path: /news
+
+#CHAPTER
+#============================
+chapters:
+    defaults:  { _controller: AppBundle:Default:index}
+    path: /chapters
+
+#MANGAS
+#============================
+mangas:
+    defaults:  { _controller: AppBundle:Default:index}
+    path: /mangas
+
+#CONTACT
+#============================
+contact:
+    defaults:  { _controller: AppBundle:Default:index}
+    path: /contact

@@ -1,0 +1,22 @@
+@font-face {
+    font-family: roboto_bold;
+    src: url(font/Roboto-BoldCondensed.ttf);
+}
+
+
+#home_logo img{
+    max-width: 120px;
+    margin-right: 1em;
+}
+#main_nav{
+    border-bottom: deepskyblue 7px solid;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+#main_nav *{
+    font-family: "roboto_bold", serif;
+}
+#home_logo{
+    display:inline;
+}
+

@@ -1,5 +1,55 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    Homepage.
+{% block content %}
+    <div id='slider' class="jumbotron row col-xs-12 col-sm-12">
+        <h1>Nouvelle version !</h1>
+        <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+    </div>
+    <p class="pull-right visible-xs">
+        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+
+    <h2 class="page_title title bold">Nouveaux chapitres</h2>
+
+    <div class="row row-offcanvas row-offcanvas-right chapters_list">
+                <div class="row col-xs-12 col-lg-12">
+                    <!--<hr class="page_title_line"/>-->
+                    <div class="col-xs-3 col-lg-3">
+                        <h2 class="title">Heading</h2>
+                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                        <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                    </div><!--/.col-xs-6.col-lg-4-->
+                    <div class="col-xs-3 col-lg-3">
+                        <h2>Heading</h2>
+                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                        <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                    </div><!--/.col-xs-6.col-lg-4-->
+                    <div class="col-xs-3 col-lg-3">
+                        <h2>Heading</h2>
+                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                        <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                    </div><!--/.col-xs-6.col-lg-4-->
+                    <div class="col-xs-3 col-lg-3">
+                        <h2>Heading</h2>
+                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                        <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                    </div><!--/.col-xs-6.col-lg-4-->
+                </div><!--/row-->
+
+            <h2 class="page_title title bold">Actualités</h2>
+            <div class="col-xs-3 col-sm-12 news_list">
+                <!--<hr class="page_title_line"/>-->
+                    <div class="list-group">
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                </div>
+            </div><!--/.sidebar-offcanvas-->
+        </div><!--/row-->
 {% endblock %}

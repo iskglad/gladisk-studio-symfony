@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Gladisk web comics{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('bootstrap/css/bootstrap-theme.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/offcanvas.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/global.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/nav_menu.css') }}" rel="stylesheet" />
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.bmp') }}" />
+</head>
+<body>
+{% block nav_menu %}
+    {{ include('default/nav_menu.html.twig') }}
+{% endblock %}
+<div id="content" class="container">
+    {% block content %}{% endblock %}
+</div>
+<div id="footer" class="container">
+    {% block footer %}
+        <hr>
+        &copy; Copyright 2010-2015 by <a href="mailto:iskglad1@gmail.com">Gladisk</a>.
+    {% endblock %}
+</div>
+{% block javascripts %}
+        <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+{% endblock %}
+</body>
 </html>
