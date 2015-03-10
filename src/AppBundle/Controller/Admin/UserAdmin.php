@@ -20,8 +20,10 @@ class UserAdmin extends Admin
     {
         $formMapper
             ->add('username', 'text', array('label' => 'User name'))
-            ->add('email', 'entity', array('class' => 'AppBundle\Entity\User'))
+            //->add('email', 'entity', array('class' => 'AppBundle\Entity\User'))
+            ->add('email', 'email', array('label' => 'Email'))
             ->add('password')
+            ->add('avatar', 'url', array('required' => 0))
             ->add('roles') //if no type is specified, SonataAdminBundle tries to guess it
         ;
     }

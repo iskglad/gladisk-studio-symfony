@@ -60,7 +60,7 @@ class User extends BaseUser
         $current_time = new \DateTime();
         $this->setDateCreated($current_time);
         $this->setAuthType("custom");
-        $this->setAvatar("/img/default-avatar-200x200.jpg");
+        $this->setAvatar("");
     }
 
     /**
