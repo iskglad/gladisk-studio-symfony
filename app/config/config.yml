@@ -2,10 +2,12 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: admin.yml}
 
 framework:
     #esi:             ~
     #translator:      { fallbacks: ["%locale%"] }
+    translator: ~
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -71,3 +73,39 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+#FOS USER
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+
+#HWI OAUTH
+hwi_oauth:
+    # name of the firewall in which this bundle is active, this setting MUST be set
+    firewall_name: secured_area
+    resource_owners:
+          google:
+                type:                google
+                client_id:           530022234073-l6o4n4i9nh6kg8at7ibkra6ibg2a6141.apps.googleusercontent.com
+                client_secret:       cnudOqzdONEyAK0rNMq4TmpF
+                scope:               "email profile"
+          facebook:
+              type:                facebook
+              client_id:           445797258916649
+              client_secret:       93288eab63b84d828e6cd7936eef1dd7
+              scope:         "email"
+              #options:
+               #   display: popup #dialog is optimized for popup window
+services:
+    hwi_oauth.user.provider.entity:
+      class: HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUserProvider
+
+#SONATA
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        # Enable the SonataAdminBundle block
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+        # Your other blocks

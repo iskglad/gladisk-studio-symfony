@@ -1,0 +1,15 @@
+sonata_admin:
+    title:      Gladisk Studio
+    title_logo: /favicon.bmp
+
+services:
+    sonata.admin.user:
+        class: AppBundle\Controller\Admin\UserAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "User" }
+        arguments:
+            - ~
+            - AppBundle\Entity\User
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
