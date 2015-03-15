@@ -61,7 +61,8 @@ doctrine:
         #   2. Uncomment database_path in parameters.yml.dist
         #   3. Uncomment next line:
         #     path:     "%database_path%"
-
+        types:
+          json: Sonata\Doctrine\Types\JsonType
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
@@ -78,9 +79,14 @@ swiftmailer:
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
-    user_class: AppBundle\Entity\User
+    user_class:     Application\Sonata\UserBundle\Entity\User
 
-#HWI OAUTH
+    group:
+        group_class:   Application\Sonata\UserBundle\Entity\Group
+        group_manager: sonata.user.orm.group_manager # If you're using doctrine orm (use sonata.user.mongodb.user_manager for mongodb)
+    service:
+        user_manager: sonata.user.orm.user_manager
+#HWIO OAUTH
 hwi_oauth:
     # name of the firewall in which this bundle is active, this setting MUST be set
     firewall_name: secured_area
@@ -94,14 +100,15 @@ hwi_oauth:
               type:                facebook
               client_id:           445797258916649
               client_secret:       93288eab63b84d828e6cd7936eef1dd7
-              scope:              "email"
+              scope:               "email"
               #options:
                #   display: popup #dialog is optimized for popup window
-services:
-    hwi_oauth.user.provider.entity:
-      class: HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUserProvider
 
 #SONATA
+sonata_user:
+    security_acl: true
+    manager_type: orm
+
 sonata_block:
     default_contexts: [cms]
     blocks:
@@ -109,3 +116,9 @@ sonata_block:
         sonata.admin.block.admin_list:
             contexts:   [admin]
         # Your other blocks
+        sonata.admin.block.search_result:
+            contexts: [admin]
+        sonata.user.block.menu:    # used to display the menu in profile pages
+        sonata.user.block.account: # used to display menu option (login option)
+        sonata.block.service.text:
+

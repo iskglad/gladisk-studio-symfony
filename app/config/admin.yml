@@ -1,15 +1,20 @@
 sonata_admin:
     title:      Gladisk Studio
     title_logo: /favicon.bmp
-
-services:
-    sonata.admin.user:
-        class: AppBundle\Controller\Admin\UserAdmin
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "User" }
-        arguments:
-            - ~
-            - AppBundle\Entity\User
-            - ~
-        calls:
-            - [ setTranslationDomain, [AppBundle]]
+    templates:
+        layout:               admin\standard_layout.html.twig
+        search:               SonataAdminBundle:Core:search.html.twig
+        search_result_block:  SonataAdminBundle:Block:block_search_result.html.twig
+    security:
+        handler: sonata.admin.security.handler.role
+#services:
+#    sonata.admin.user:
+#        class: AppBundle\Controller\Admin\UserAdmin
+#        tags:
+#            - { name: sonata.admin, manager_type: orm, group: "Content", label: "User" }
+#        arguments:
+#            - ~
+#            - AppBundle\Entity\User
+#            - ~
+#        calls:
+#            - [ setTranslationDomain, [AppBundle]]
