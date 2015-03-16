@@ -6,6 +6,16 @@
 
     <entity name="Application\Sonata\UserBundle\Entity\User" table="fos_user">
 
+        <lifecycle-callbacks>
+            <lifecycle-callback type="prePersist" method="preUpload"/>
+            <lifecycle-callback type="preUpdate" method="preUpload"/>
+
+            <lifecycle-callback type="postPersist" method="upload"/>
+            <lifecycle-callback type="postUpdate" method="upload"/>
+
+            <lifecycle-callback type="postRemove" method="removeUpload"/>
+        </lifecycle-callbacks>
+
         <id name="id" column="id" type="integer">
             <generator strategy="AUTO" />
         </id>
