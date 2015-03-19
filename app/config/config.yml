@@ -2,12 +2,13 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: ckeditor.yml }
     - { resource: sonata_core.yml}
     - { resource: sonata_formatter.yml}
     - { resource: sonata_intl.yml}
     - { resource: sonata_admin.yml}
     - { resource: sonata_media.yml}
-    #- { resource: sonata_news.yml}
+    - { resource: sonata_news.yml}
 
 framework:
     #esi:             ~

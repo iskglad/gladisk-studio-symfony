@@ -1,10 +1,9 @@
 sonata_news:
     title:        Glasisk-studio News
-    title_logo: /favicon.bmp
     link:         /
     description:  Add your for gladisk-studio
     salt:         'secureToken'
-    permalink_generator: sonata.news.permalink.date # sonata.news.permalink.collection
+    permalink_generator:  sonata.news.permalink.collection #sonata.news.permalink.date
 
     comment:
         notification:

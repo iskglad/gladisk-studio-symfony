@@ -1,0 +1,7 @@
+ivory_ck_editor:
+    configs:
+        news:
+            toolbar:                standard #[ [ "Source", "-", "Save" ], "/", [ "Anchor" ], "/", [ "Maximize" ] ]
+            uiColor:                "#000000"
+            filebrowserUploadRoute: "/uploads"
+            #extraPlugins:           "wordcount"

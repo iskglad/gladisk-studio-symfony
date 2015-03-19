@@ -53,13 +53,13 @@ class AppKernel extends Kernel
 
             //Sonata Media
             new Sonata\MediaBundle\SonataMediaBundle(),
-
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
 
-
-
-
             //Sonata News
+            new Sonata\NewsBundle\SonataNewsBundle(),
+            new Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
+
+
             /*new Sonata\MarkItUpBundle\SonataMarkItUpBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new Sonata\NewsBundle\SonataNewsBundle(),
