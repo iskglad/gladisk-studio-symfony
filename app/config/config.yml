@@ -2,10 +2,13 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: admin.yml}
+    - { resource: sonata_core.yml}
+    - { resource: sonata_formatter.yml}
+    - { resource: sonata_intl.yml}
+    - { resource: sonata_admin.yml}
+    - { resource: sonata_media.yml}
+    #- { resource: sonata_news.yml}
 
-parameters:
-    user_avatar_folder: '/web/img/avatars/'
 framework:
     #esi:             ~
     #translator:      { fallbacks: ["%locale%"] }

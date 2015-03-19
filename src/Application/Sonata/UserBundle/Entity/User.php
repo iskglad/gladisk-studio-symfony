@@ -103,7 +103,7 @@ class User extends BaseUser
             return;
         // do whatever you want to generate a unique name
         //$filename = sha1(uniqid(mt_rand(), true));
-        $new_avatar_file_name = $this->getId().'_'.$this->getFirstname();
+        $new_avatar_file_name = $this->getId().'_'.$this->getUsername();
         $this->avatar = $new_avatar_file_name.'.'.$this->getFile()->guessExtension();
 
     }
@@ -137,7 +137,7 @@ class User extends BaseUser
     protected function getUploadDir()
     {
         // get rid of the __DIR__ so it doesn't screw when displaying uploaded doc/image in the view.
-        return 'img/avatars';
+        return 'uploads/avatars';
     }
 
     /*

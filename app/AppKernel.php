@@ -25,22 +25,49 @@ class AppKernel extends Kernel
             new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
             new FOS\UserBundle\FOSUserBundle(),
 
-            // Add your dependencies
+            //Sonata Admin
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
+
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+
+            new Sonata\IntlBundle\SonataIntlBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
-            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            //...
+            new Sonata\FormatterBundle\SonataFormatterBundle(),
+            new Sonata\MarkItUpBundle\SonataMarkItUpBundle(),
 
-            // If you haven't already, add the storage bundle
-            // This example uses SonataDoctrineORMAdmin but
-            // it works the same with the alternatives
-            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-
-            // Then add SonataAdminBundle
             new Sonata\AdminBundle\SonataAdminBundle(),
+
+            //Sonnata Classification
+            new Sonata\ClassificationBundle\SonataClassificationBundle(),
+            new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
+
+            //Sonata User
+            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+
+            //Sonata Media
+            new Sonata\MediaBundle\SonataMediaBundle(),
+
+            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
+
+
+
+
+            //Sonata News
+            /*new Sonata\MarkItUpBundle\SonataMarkItUpBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new Sonata\NewsBundle\SonataNewsBundle(),
+
+            new Sonata\FormatterBundle\SonataFormatterBundle(),
+            new Sonata\ClassificationBundle\SonataClassificationBundle(),
+            new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
+            */
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
